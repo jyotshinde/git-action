@@ -9,11 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: output message
-        run: echo "${{ toJson(github) }}"
+        run: echo "${{ toJSON(github.event) }}"
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: install dependencies
-        run: npm install
+        run: npm ci
+      - name: npm run lint
+        run: npm run lint
       - name: npm run build
         run: npm run build
   test:
