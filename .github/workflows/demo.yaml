@@ -12,7 +12,7 @@ jobs:
       - name: output message
         run: echo "${{ toJson(github) }}"
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: npm install
         run: npm install
       - name: npm run build
