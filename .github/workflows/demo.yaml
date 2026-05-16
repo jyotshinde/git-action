@@ -4,12 +4,12 @@ on:
     branches: [ main ]
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-defaults:
-      run:
-        working-directory: "./04 Practice Project"
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./04 Practice Project"
     steps:
       - name: output message
         run: echo "${{ toJson(github) }}"
