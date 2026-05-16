@@ -1,0 +1,24 @@
+name: Demo Workflow
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: output message
+        run: echo "${{ toJson(github) }}"
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: npm install
+        run: npm install
+      - name: npm run build
+        run: npm run build
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: npm test
+        run: npm test
+      - name: npm run dev 
+        run: npm run dev
+  
+  
