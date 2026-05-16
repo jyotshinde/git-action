@@ -14,8 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5
       - name: npm install
-        run: npm install 
-        working-directory: /home/thejyot/github-actions/demo-proj/git-action/04 Practice Project
+        run: npm install
       - name: npm run build
         run: npm run build
   test:
